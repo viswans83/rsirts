@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require 'rsirts'
+
+usage = <<END
+Usage: #{$0} depth_map_file
+END
+
+args_present = ARGV[0]
+
+unless args_present
+  puts usage
+  exit
+end
+
+inp_file_path = ARGV[0]
+
+puts; puts; puts; puts
+Rsirts.generate(inp_file_path).each do |line|
+  puts line
+end
+puts; puts; puts; puts
